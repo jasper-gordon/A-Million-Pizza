@@ -36,3 +36,74 @@
     transform: rotate(360deg);
   }
 }
+
+.BackColor {
+  background-color: #85a6de;
+}
+
+.NavColor {
+  background-color: #5075ed;
+  border-bottom: #000000;
+  border-style: solid;
+  border-width: 5px;
+
+ 
+}
+
+.NavList{
+  color: pink;
+  list-style: none;
+  display: inline;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  padding-bottom: .25em;
+}
+
+.navLink{
+  color: white;
+  text-shadow: 2px 2px red;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.navLink:hover{
+ color:rgb(240, 112, 52);
+ text-shadow: 2px 2px gold;
+}
+
+.pizzaCount{
+  color: white;
+  text-shadow: 2px 2px red;
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.countBox{
+  display: grid;
+  align-items: center;
+}
+
+.Pizzas-Color {
+  background-color: #e4be5f;
+}
+
+.Videos-Color {
+  background-color: #69cb76;
+}
+
+.image-link{
+  width: 5em;
+  place-items: center;
+  transition: transform 1s;
+
+}
+
+.image-link:hover{
+  transform: rotate(360deg);
+}
+
