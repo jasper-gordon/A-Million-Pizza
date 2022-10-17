@@ -11,30 +11,63 @@ import pizza3 from '../assets/pizza3.png';
 import pizza4 from '../assets/pizza4.png';
 import pizza5 from '../assets/pizza5.png';
 import pizza6 from '../assets/pizza6.png';
+import pizza7 from '../assets/pizza7.png';
+import pizza8 from '../assets/pizza8.png';
+import pizza9 from '../assets/pizza9.png';
+import pizza10 from '../assets/pizza10.png';
+import pizza11 from '../assets/pizza11.png';
+import pizza12 from '../assets/pizza12.png';
+
 import '../App.css';
-//There must be a way to import all the files in the folder, to automate this^^
 
 
 
 
 
+const pizza_photos = [pizza1, pizza2, pizza3, pizza4, pizza5, pizza6]
 
 export const Pizzas = () => {
   return (
     <>
   <div className='Pizzas-Color'>
-  <h3> Pizza Page </h3>
-  <p>The goal of this page is to display any and all Pizzas
-    created by this community! Your favorite bite, a quick snack, or even one
-    that just didn't cook enough, all pizzas welcome!
+  
+  <p className='quote-text'> "Just seeing a pizza can be enough to inspire new ideas"
   </p>
-  <h1> To Do:</h1>
-   <FormGroup>
-      <FormControlLabel control={<Checkbox defaultChecked />} label="Add photo grid UI" />
-      <FormControlLabel control={<Checkbox />} label="Add photo submission form" />
-      <FormControlLabel control={<Checkbox />} label="Format page" />
-    </FormGroup> 
-    
+ 
+
+    <div className="flex-container">
+        <img src={pizza1} className="pizza-photo"></img>
+        <img src={pizza2} className="pizza-photo"></img>
+        <img src={pizza3} className="pizza-photo"></img>
+        <img src={pizza4} className="pizza-photo"></img>
+        <img src={pizza5} className="pizza-photo"></img>
+        <img src={pizza6} className="pizza-photo"></img>
+        <img src={pizza7} className="pizza-photo"></img>
+        <img src={pizza8} className="pizza-photo"></img>
+        <img src={pizza9} className="pizza-photo"></img>
+        <img src={pizza10} className="pizza-photo"></img>
+        <img src={pizza11} className="pizza-photo"></img>
+        <img src={pizza12} className="pizza-photo"></img>
+
+
+    </div>
+
+    {/* <div className='pizzaRow'>
+      <div className='pizzaCol'>
+        <image src={pizza1}/>
+        <image src={pizza2}/>
+      </div>
+
+      <div className='pizzaCol'>
+        <image src={pizza3}/>
+        <image src={pizza4}/>
+      </div>
+      <div className='pizzaCol'>
+        <image src={pizza5}/>
+        <image src={pizza2}/>
+      </div>
+    </div>
+   
     <ImageList  sx={{ width: 500, height: 450, backgroundColor: 'white' }} cols={3} rowHeight={164}>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
@@ -48,8 +81,9 @@ export const Pizzas = () => {
         </ImageListItem>
       ))}
     </ImageList>
-    
+    */}
     </div>
+    
   </>
   )
 }
@@ -62,10 +96,6 @@ const itemData = [
   {
     img: pizza1,
     title: 'Breakfast',
-  },
-  {
-    img: logo,
-    title: 'Burger',
   },
   {
     img: pizza2,
@@ -86,25 +116,5 @@ const itemData = [
   {
     img: pizza6,
     title: 'Basketball',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-  },
+  }
 ];

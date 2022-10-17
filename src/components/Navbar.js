@@ -28,20 +28,20 @@ export default function Navbar() {
     //getViews()
     
     //document.getElementById("data").innerHTML = data;
-    return <nav className="nav">
-        
-        <div className="NavColor">
+    return <nav className="navbar">
+        <div>
         <Link to="/" className="site-title" ><img className="image-link" src={logo} alt="A Million Pizza Logo"></img></Link>
-        <div className="countBox">
-        <p className="pizzaCount">Pizza Count: 2992</p>
         </div>
-        <div className="grid">
+        <div className="countBox">
+        <p className="pizzaCount">Pizza Count: 3390</p>
+        </div>
+        <div className="nav-flex">
         <Link to="/pizzas" 
             className="navLink" > Pizzas</Link>
         <Link to="/videos" className="navLink"> Videos</Link>
         <Link to="/tips" className="navLink"> Tips</Link>      
         </div>
-        </div>
+        
     </nav>
 }
 
