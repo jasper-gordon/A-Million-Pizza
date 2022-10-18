@@ -23,7 +23,7 @@ function App() {
         <Route path='/videos' element={<Videos />} />
         <Route path='/tips' element={<Tips />} />
         <Route path='/pizzas' element={<Pizzas />} />
-        <Route path='/nopage' element={<NoPage />} />
+        <Route path='*' element={<NoPage />} />
       </Routes>
     </div>
     </>

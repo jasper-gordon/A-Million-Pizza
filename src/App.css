@@ -169,6 +169,16 @@
   place-items: center;
   min-height: 100vh;
   align-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.home-icon{
+  height: auto;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .hidden{
@@ -186,4 +196,29 @@
 .show{
   opacity: 1;
   filter: blur(0);
+}
+
+
+/* NO PAGE FOUND  */
+
+.no-page {
+  background-color: black;
+  color: white;
+}
+
+.no-page-cat{
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-top: 25%;
+  padding-bottom: 25%;
+  width: 50%;
+  height: auto;
+  align-items: center;
+}
+
+.no-page-text{
+  text-align: center;
+  color: white;
+  size: 20px;
+  font-family: 'Poppins', sans-serif;
 }
