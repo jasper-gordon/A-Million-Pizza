@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
 .navbar {
   background-color: #5075ed;
   border-bottom: #000000;
@@ -153,7 +155,7 @@
 .home-text{
   background-color:rgb(0, 0, 0);
   color: white;
-  font-family:'Courier New', Courier, monospace;
+  font-family: "Poppins", sans-serif;
   padding: 0;
   margin: 0;
   place-items: center;
@@ -170,10 +172,18 @@
 }
 
 .hidden{
-  opacity: .5;
+  opacity: 0;
+  filter: blur(5px);
   transition: all 1.5s;
+}
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
 }
 
 .show{
   opacity: 1;
+  filter: blur(0);
 }
