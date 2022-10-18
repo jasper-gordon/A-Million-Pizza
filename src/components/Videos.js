@@ -26,13 +26,13 @@ export const Videos = () => {
       <FormControlLabel control={<Checkbox />} label="Display videos in a grid with titles" />
       <FormControlLabel control={<Checkbox />} label="Add search feature to filter videos" />
     </FormGroup> 
-
+{/* 
   <div>
     <YouTube
     videoId='TvRwiL56JLA'
     opts = {opts}
     />
-  </div>
+  </div> */}
     </div>
     
   </>

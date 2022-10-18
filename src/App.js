@@ -6,11 +6,14 @@ import { Tips } from './components/Tips'
 import { Pizzas } from './components/Pizzas'
 import Navbar from './components/Navbar'
 import './App.css';
+import { entries } from 'lodash';
 
 
 function App() {
   
   
+
+
   return (
     <>
     <Navbar />

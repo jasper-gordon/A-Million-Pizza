@@ -13,15 +13,15 @@ export default function Navbar() {
     
     const [count, setCount] = React.useState()
     
-    //Requesting YouTube View data from backend server
-    const getViews = async() => {
-        const response = await fetch("http://localhost:8000/views")
-        const finalData = await (response.text())
-        let data = await (JSON.parse(finalData))
-        //Updating state with view count
-        setCount(data.items[0].statistics.viewCount)
+    // //Requesting YouTube View data from backend server
+    // const getViews = async() => {
+    //     const response = await fetch("http://localhost:8000/views")
+    //     const finalData = await (response.text())
+    //     let data = await (JSON.parse(finalData))
+    //     //Updating state with view count
+    //     setCount(data.items[0].statistics.viewCount)
    
-    }
+    // }
     
 
     //console.log('data', res);
