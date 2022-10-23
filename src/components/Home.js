@@ -19,25 +19,28 @@ import PizzaIcon from '../assets/neon-pizza.png';
 
 // console.log(YT_URL)
 
+console.log("Hello")
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     console.log(entry)
     if (entry.isIntersecting) {
       entry.target.classList.add('show')
     } else {
-      entry.target.classList.remove('show')
+      entry.target.classList.remove('show')   
     }
   })
 })
 
 const hiddenElements = document.querySelectorAll('.hidden')
+console.log(hiddenElements)
 hiddenElements.forEach((el) => observer.observe(el))
 
 
 
 
 export const Home = () => {
-    return(
+  console.log("Here comes a new Home component")  
+  return(
       <>
    <div className='home-text'>
    <div className='home-div hidden'>

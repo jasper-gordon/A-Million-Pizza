@@ -11,9 +11,6 @@ import { entries } from 'lodash';
 
 function App() {
   
-  
-
-
   return (
     <>
     <Navbar />
