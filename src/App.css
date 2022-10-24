@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
+
+/*   NAVBAR   */
+
 .navbar {
   background-color: #5075ed;
   border-bottom: #000000;
@@ -30,6 +33,7 @@
   font-size: 2em;
   font-weight: bold;
   padding: .25em;
+  font-family: "Poppins", sans-serif;
 }
 
 .nav-flex{
@@ -45,16 +49,19 @@
 .pizzaCount{
   color: white;
   text-shadow: 2px 2px red;
-  font-size: 3em;
+  font-size: 3.5em;
   font-weight: bold;
   text-align: center;
   margin: 0;
+  padding-bottom: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
 .pizzaBox{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 50px;
 }
 
 .pizzaRow{
@@ -98,12 +105,60 @@
 }
 
 .Pizzas-Color {
-  background-color: antiquewhite;
+  background-color: #f8cd8c;
 }
 
-.Videos-Color {
-  background-color: #69cb76;
+
+/* VIDEOS PAGE */
+
+.video-search-box{ 
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 70px;
+  padding-bottom: 40px;
+ 
 }
+
+.video-search-input{
+  padding-left: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+
+}
+.Videos-Color {
+  background-color: #f8cd8c;
+  
+}
+
+.videos-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.video{
+  flex:100%;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  padding-bottom: 50px;
+  /* text-shadow: 2px 2px #ff5757; */
+
+ 
+  
+}
+
+@media only screen and (min-width: 768px) {
+  /* For Desktop */
+  .video{
+    flex: 45%
+  }
+}
+
 
 .image-link{
   width: 6em;
@@ -133,7 +188,7 @@
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  background-color: antiquewhite;
+  background-color: #f8cd8c;
   justify-content: space-around;
 }
 
@@ -150,6 +205,10 @@
   font-style: italic;
   margin: 0;
   padding-top: 20px;
+}
+
+.background{
+  background-color: #f8cd8c;
 }
 
 .home-text{
@@ -221,4 +280,38 @@
   color: white;
   size: 20px;
   font-family: 'Poppins', sans-serif;
+}
+
+/* CUSTOMIZEDACCORDION  */
+
+.accord-dic{
+  margin-top: 20px;
+  margin-bottom: 20px
+}
+
+
+/*  TIPS PAGE  */
+
+.faq-header{
+  font-family: 'Poppins', sans-serif;
+  font-size: 100px;
+  text-align: center;
+  color: white;
+  text-shadow: 6px 6px #ff5757;
+  font-weight: bold;
+  margin-top: 0;
+  padding-top: 70px;
+  margin-bottom: 10px;
+}
+
+.faq-sub-header{
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px #ff5757;
+  font-weight: bold;
+  margin-top: 0;
+  padding-top: 70px;
+  margin-bottom: 10px;
 }
