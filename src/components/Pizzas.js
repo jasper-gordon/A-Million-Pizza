@@ -35,7 +35,7 @@ export const Pizzas = () => {
   </p>
  
 
-    <div className="flex-container">
+    <div className="pizza-container">
         <img src={pizza1} className="pizza-photo"></img>
         <img src={pizza2} className="pizza-photo"></img>
         <img src={pizza3} className="pizza-photo"></img>

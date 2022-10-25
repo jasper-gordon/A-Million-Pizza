@@ -7,7 +7,6 @@ import VideoData from "./youtube_vidoes.json";
 import {useState} from 'react'
 
 
-console.log(VideoData);
 export const Videos = () => {
   
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,11 +34,10 @@ export const Videos = () => {
       } else if (val.videoTitle.toLowerCase().includes(searchTerm.toLowerCase())) {
         return val
       }
-    }).map((val, key) => {
-    return <div className='video'>
-  
-      <YouTube videoId={val.videoId} opts = {opts}></YouTube>
-      {val.videoTitle} 
+    }).map((val, index) => {
+    return <div className='video' key={index}>
+      <YouTube className='pizzavideo' videoId={val.videoId} opts = {opts}></YouTube>
+      <p className='video-title'>{val.videoTitle}</p> 
       </div>
     
 })}

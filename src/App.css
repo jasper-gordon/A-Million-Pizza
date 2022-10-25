@@ -64,39 +64,7 @@
   padding-bottom: 50px;
 }
 
-.pizzaRow{
-  display: flex;
-  flex-wrap: wrap;
-}
 
-.pizzaCol{
-  display: flex;
-  flex: 25%;
-  max-width: 25%;
- 
-  
-}
-
-.pizzaCol image {
-  margin-top: 8px;
-  vertical-align: middle;
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media (max-width: 800px) {
-  .pizzaCol {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .pizzaCol {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
 .countBox{
   display: flex;
   justify-content: space-around;
@@ -142,14 +110,27 @@
 
 .video{
   flex:100%;
-  font-weight: bold;
-  font-size: 30px;
-  color: white;
-  padding-bottom: 50px;
+  
   /* text-shadow: 2px 2px #ff5757; */
 
  
   
+}
+
+.video-title{
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  padding-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.pizzavideo{
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 768px) {
@@ -172,27 +153,29 @@
 }
 
 .pizza-photo {
-  max-width: 500px;
+  max-width: 40%;
   height: auto;
   padding: 20px;
+}
+
+@media(min-width: 768px) {
+  /* For Desktop */
+.pizza-photo {
+  max-width: 25%;
+ 
   
 }
-
-@media (max-width: 800px) {
-  .pizza-photo {
-    max-width: 200px;
-    
-  }
 }
 
-.flex-container {
+
+.pizza-container {
   display: flex;
   flex-wrap: wrap;
   background-color: #f8cd8c;
   justify-content: space-around;
 }
 
-.flex-container > div {
+.pizza-container > div {
   margin: 10px;
   padding: 20px;
 
