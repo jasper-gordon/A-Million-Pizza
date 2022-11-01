@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Welcome to A Million Pizza Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project utilizes React and Firebase to create a all-in-one hub for pizza related content.
 
 ## Available Scripts
 
