@@ -30,10 +30,14 @@ export default function Navbar() {
     //document.getElementById("data").innerHTML = data;
     return <nav className="navbar">
         <div>
-        <Link to="/" className="site-title" ><img className="image-link" src={logo} alt="A Million Pizza Logo"></img></Link>
-        </div>
+        
+       
         <div className="countBox">
+        <Link to="/">
+            <img className="image-link" src={logo} alt="A Million Pizza Logo"></img>
+        </Link>
         <p className="pizzaCount">Pizza Count: 3390</p>
+        </div>
         </div>
         <div className="nav-flex">
         <Link to="/pizzas" 

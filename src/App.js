@@ -4,9 +4,11 @@ import { NoPage } from './components/NoPage'
 import { Videos } from './components/Videos'
 import { Tips } from './components/Tips'
 import { Pizzas } from './components/Pizzas'
+import {Para} from './components/Para'
 import Navbar from './components/Navbar'
 import './App.css';
 import { entries } from 'lodash';
+
 
 
 function App() {
@@ -15,8 +17,10 @@ function App() {
     <>
     <Navbar />
     <div className='container'>
+
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Para />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/videos' element={<Videos />} />
         <Route path='/tips' element={<Tips />} />
         <Route path='/pizzas' element={<Pizzas />} />

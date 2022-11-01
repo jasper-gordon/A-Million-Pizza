@@ -5,6 +5,7 @@ import Checkbox from '@mui/material/Checkbox';
 import YouTube from "react-youtube";
 import VideoData from "./youtube_vidoes.json";
 import {useState} from 'react'
+import ReactPlayer from 'react-player/youtube';
 
 
 export const Videos = () => {
@@ -36,7 +37,10 @@ export const Videos = () => {
       }
     }).map((val, index) => {
     return <div className='video' key={index}>
-      <YouTube className='pizzavideo' videoId={val.videoId} opts = {opts}></YouTube>
+      {/* <YouTube className='pizzavideo' videoId={val.videoId} opts = {opts}></YouTube> */}
+      <div className='player-wrapper'>
+      <ReactPlayer className='react-player' width='100%' height="100%" url={val.videoURL} />
+      </div>
       <p className='video-title'>{val.videoTitle}</p> 
       </div>
     
