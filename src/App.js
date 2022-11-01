@@ -4,7 +4,6 @@ import { NoPage } from './components/NoPage'
 import { Videos } from './components/Videos'
 import { Tips } from './components/Tips'
 import { Pizzas } from './components/Pizzas'
-import {Para} from './components/Para'
 import Navbar from './components/Navbar'
 import './App.css';
 import { entries } from 'lodash';
@@ -19,8 +18,7 @@ function App() {
     <div className='container'>
 
       <Routes>
-        <Route path='/' element={<Para />} />
-        <Route path='/home' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/videos' element={<Videos />} />
         <Route path='/tips' element={<Tips />} />
         <Route path='/pizzas' element={<Pizzas />} />
@@ -32,5 +30,3 @@ function App() {
 }
 
 export default App;
-//<Route path='/a-million-pizza' element={<Home />} />
-//<Route path='/' element={<Navigate to='/a-million-pizza'/>} />

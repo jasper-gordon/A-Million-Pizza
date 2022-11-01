@@ -33,16 +33,22 @@ const Accordion = styled((props) => (
 //This component helps with expansion functionality on clicks
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem'  }} />}
     {...props}
   />
 ))(({ theme }) => ({
   color: 'white',
+  Typography: {
+    "fontWeight": 600,
+    "fontFamily":"Poppins"
+  },
+  
   
   backgroundColor:
     theme.palette.mode === 'dark'
-      ? '#5075ed'
-      : '#5075ed',
+      ? '#C75146'
+      : '#C75146',
+   
   flexDirection: 'row-reverse',
   '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
     transform: 'rotate(90deg)',
@@ -55,8 +61,11 @@ const AccordionSummary = styled((props) => (
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
   borderTop: '1px solid rgba(0, 0, 0, .125)',
-  backgroundColor: '#5075ed',
-  color: 'white'
+  backgroundColor: '#C75146',
+  color: 'white',
+ 
+
+  
 }));
 
 export default function CustomizedAccordion(props) {
@@ -74,10 +83,10 @@ export default function CustomizedAccordion(props) {
       
       <Accordion expanded={expanded == item.expandedId} onChange={handleChange(item.expandedId)}>
         <AccordionSummary aria-controls={item.controls} id={item.header}>
-          <Typography>{item.label}</Typography>
+          <Typography fontWeight="fontWeightBold" fontFamily={"Poppins"} fontSize={"22px"}>{item.label}</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography fontWeight="fontWeightBold" fontFamily={"Poppins"} fontSize={'18px'}>
             {item.content}
           </Typography>
         </AccordionDetails>

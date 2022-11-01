@@ -96,7 +96,7 @@ export const Tips = () => {
     <CustomizedAccordion accordionInfo = {toppingsFAQ} />
     <p className='faq-sub-header'>Cooking + Equipment</p>
     <CustomizedAccordion accordionInfo = {cookingFAQ} />
-    <h2>Didn't find what you're looking for? Send us a note at amillionpizza@gmail.com and we'll get right back to you!</h2>
+    <h2 className='tips-footer'>Didn't find what you're looking for? Send us a note at amillionpizza@gmail.com and we'll get right back to you!</h2>
     </div>
     
   </>

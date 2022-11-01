@@ -22,6 +22,7 @@ export const Home = () => {
         speed={0}
         offset={0}
         className={'homeImage'}
+        factor={2}
         style={{
             backgroundImage: `url(${fire})`,
             backgroundSize: 'cover',
@@ -74,7 +75,7 @@ export const Home = () => {
         offset={1.5}>
         <div className='home-div1'>
         <h1 className='home-subheader'> The Challenge</h1>
-        <p className='home-paragraph'> No great website is without a side quest, ours is simple: reach 1,000,000 views on our youtube videos. Curious? Keep scrolling to find out or click that big red button 👇
+        <p className='home-paragraph'> No great website is without a side quest, and ours is simple: Reach 1,000,000 views or "pizzas" on our Youtube videos. Curious? Keep scrolling to find out or click that big red button 👇
         </p>
         </div>
         </ParallaxLayer>
@@ -106,7 +107,7 @@ export const Home = () => {
         offset={3.3}>
         <div className='home-div1'>
         <h1 className='home-subheader'> The Guides</h1>
-        <p className='home-paragraph'> As lifelong pizza makers we have made plenty of mistakes (ever had yeast-less pizza?), which is why we're developing a set of guides and resources to help you whether it's to plan your next pizza party, or to understand why the last one might not have go so well... 
+        <p className='home-paragraph'> As lifelong pizza makers we have made plenty of mistakes (ever had yeast-less pizza?), which is why we're developing a set of guides and resources to help you whereever you are on your pizza journey.
         </p>
         </div>
 
@@ -149,15 +150,20 @@ export const Home = () => {
             backgroundColor: '#C75146',
         }}
         >
-        <h1 className='home-title'>
+          <h1 className='home-title'>
             About Us
-        </h1>
-        <p className='home-about'>
-        A Million Pizza Challenge started in November 2021 when Jasper, an avid baker and lifelong dough boy, joked  to his friend Cooper, the smart, handsome one, that "it would be kinda fun to make a pizza every day, like do the whole 10,000 hours thing." Cooper didn't think that was funny, and told him it was a terrible idea. After going home for the holidays, Jasper came back with an even worse idea: Make a million pizzas and film the whole thing. After Cooper ran the numbers on this (It would take about 2,000 years to make a million pizzas one at a time non-stop) He suggested counting each view on the Youtube video as a pizza instead. 
-        </p>
+          </h1>
+          <p className='home-about'>
+          A Million Pizza Challenge started in November 2021 when Jasper, a lifelong dough boy and avid pizza maker, lamented to his to his friend Cooper, the smart and handsome one, that he was looking for a new challenge to push him to elevate his pizza, and he joked that "it would be kinda fun to make a pizza every day, like do the whole 10,000 hours thing." Cooper didn't think that was funny, and told him it was a terrible idea. After going home for the holidays, Jasper came back with an even worse idea: Make a million pizzas and film the whole thing. After Cooper ran the numbers on this (It would take about 2,000 years to make a million pizzas one at a time non-stop) and suggested instead counting each view on the Youtube video as a pizza instead. Not yet ready to give his life to the holy pie, Jasper agreed and set off on his mission to make better pizza, to make more pizza, and most of all to have fun doing it with his friends.
+          </p>
+          
+        
         </ParallaxLayer>
-        </Parallax> 
+      
+         
+          </Parallax> 
  </div>
+
    </>
   )
 }
