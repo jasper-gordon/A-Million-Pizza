@@ -8,7 +8,7 @@ import CustomizedAccordion from './CustomizedAccordion';
 const doughFAQ = [
   {
   label: "Why is my pizza dough so stiff and hard to shape?",
-  content: "Most likely it's about time or temperature. Dough is made up of a complex gluten network of proteins, think of this network like the muscles in your body. If you're too cold or you just finished excersising, your muscles will be stiff and inflexible. For best shaping, we recommend letting your dough rest in warm spot (at least 70˚F) for at least an hour or two after shaping or coming out of the fridge.",
+  content: "Most likely it's about time or temperature. Dough is made up of a complex gluten network of proteins which can be thought of like the muscles in your body. If you're too cold or you just finished excersising, your muscles will be stiff and inflexible. For best shaping, we recommend letting your dough rest in warm spot (at least 70˚F) for at least an hour or two after shaping or coming out of the fridge.",
   expandedId: "panel1",
   controls: "panel1d-content",
   header: "panel1d-header"
@@ -16,14 +16,14 @@ const doughFAQ = [
 
   {
     label: "What flour do you use?",
-    content: "Bread flour!",
+    content: "Generally speaking we like to use unbleached all-purpose or bread flour for pizza. To form a dough strong enough to handle being tossed, shaped, and topped we want a strong gluten network. That siad, there are many varieties of flour on the market from both local and national brand millers and we love to experiement!",
     expandedId: "panel2",
     controls: "panel2d-content",
     header: "panel2d-header"
     },
     {
     label: "Why do some recipes use sugar or oil others don't?",
-    content: "Coloration and texture! Sugars and fats both lend to better browning when baking. Sugar also helps yeast activation, acting as food for the bacteria. Fats help improve texture, keeping the crust from drying out too much in the oven, however it also can inhibit gltuen development so it is improtnat to beware of the amount you're putting in. ",
+    content: "Coloration and texture! Sugars and fats both lend to better browning when baking. Sugar also helps yeast activation, acting as food for the bacteria. Fats help improve texture, keeping the crust from drying out too much in the oven, however it also can inhibit gltuen development so it is important to beware of the amount you're adding. ",
     expandedId: "panel3",
     controls: "panel3d-content",
     header: "panel3d-header"
@@ -34,7 +34,7 @@ const doughFAQ = [
 const toppingsFAQ = [
   {
   label: "What tomatoes do you use?",
-  content: "The best tomaotes depend on whatever you prefer. There are many great local and national brands. My favorite are Biancodinapoli and Alta Cucina",
+  content: "The best tomaotes depend on whatever you prefer. There are many great local and national brands. Our favorite are Bianco DiNapoli and Alta Cucina",
   expandedId: "panel1",
   controls: "panel1d-content",
   header: "panel1d-header"
@@ -74,7 +74,7 @@ const cookingFAQ = [
       },
       {
         label: "Do I need a pizza peel (the wood thingy)?",
-        content: "Certainly not, they make things easier and look cool 😎. A well-floured cutting board or really any flat, non-stick surface will do just fine. We've been known to use cardboard in a pinch! ",
+        content: "Certainly not, it just makes things easier and looks cool 😎. A well-floured cutting board or really any flat, non-stick surface will do just fine. We've even been known to use cardboard in a pinch! ",
         expandedId: "panel4",
         controls: "panel4d-content",
         header: "panel4d-header"

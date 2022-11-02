@@ -16,7 +16,7 @@ export const Home = () => {
       <>
    <div>
      
-      <Parallax pages={6} ref={ref}> 
+      <Parallax pages={6.5} ref={ref}> 
     
         <ParallaxLayer 
         speed={0}
@@ -146,17 +146,19 @@ export const Home = () => {
          <ParallaxLayer 
         speed={0}
         offset={5}
+        factor={1.5}
         style={{
             backgroundColor: '#C75146',
         }}
         >
+          <div>
           <h1 className='home-title'>
             About Us
           </h1>
           <p className='home-about'>
           A Million Pizza Challenge started in November 2021 when Jasper, a lifelong dough boy and avid pizza maker, lamented to his to his friend Cooper, the smart and handsome one, that he was looking for a new challenge to push him to elevate his pizza, and he joked that "it would be kinda fun to make a pizza every day, like do the whole 10,000 hours thing." Cooper didn't think that was funny, and told him it was a terrible idea. After going home for the holidays, Jasper came back with an even worse idea: Make a million pizzas and film the whole thing. After Cooper ran the numbers on this (It would take about 2,000 years to make a million pizzas one at a time non-stop) and suggested instead counting each view on the Youtube video as a pizza instead. Not yet ready to give his life to the holy pie, Jasper agreed and set off on his mission to make better pizza, to make more pizza, and most of all to have fun doing it with his friends.
           </p>
-          
+          </div>
         
         </ParallaxLayer>
       
