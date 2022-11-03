@@ -8,6 +8,74 @@
   border-bottom: 3px solid #000000;
 }
 
+.navTop{
+  text-align: center;
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
+  justify-content: center;
+  display: block;
+}
+
+.countBox{
+  display: inline-block;
+}
+
+.pizzaCount{
+  color: white;
+  text-shadow: 3px 3px #81171B;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+
+@media(min-width: 768px) {
+  /* For Desktop */
+  .pizzaCount{
+
+    font-size: 35px;
+  }
+  }
+
+.navIcon{
+  float: left;
+}
+
+.image-link{
+  width: 30px;
+  transition: transform 1s;
+  margin-bottom: -10px;
+  white-space: nowrap;
+  padding-top: 4px;
+ 
+
+}
+
+@media(min-width: 768px) {
+  /* For Desktop */
+.image-link{
+  width: 50px;
+}
+}
+
+
+@media(min-width: 768px) {
+  /* For Desktop */
+.image-link:hover{
+  transform: rotate(360deg);
+}
+}
+
+
+
+.git-link{
+
+}
+
 .NavColor {
   background-color: #C75146;
   border-bottom: #000000;
@@ -31,7 +99,17 @@
   font-size: 20px;
   font-weight: bold;
   padding: 5px;
+  padding-left: 0;
   font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+@media(min-width: 768px) {
+  /* For Desktop */
+.navLink:hover{
+ color:#F6BC65;
+ 
+}
 }
 
 .nav-flex{
@@ -40,23 +118,7 @@
   align-items: center;
 }
 
-@media(min-width: 768px) {
-  /* For Desktop */
-.navLink:hover{
- color:rgb(240, 112, 52);
- text-shadow: 2px 2px gold;
-}
-}
 
-.pizzaCount{
-  color: white;
-  text-shadow: 3px 3px #81171B;
-  font-size: 35px;
-  font-weight: bold;
-  text-align: center;
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-}
 
 .pizzaBox{
   display: flex;
@@ -65,27 +127,10 @@
   padding-bottom: 50px;
 }
 
-
-.countBox{
-  align-items: center;
-  
-}
-
 .Pizzas-Color {
   background-color: #F6BC65;
 }
 
-.image-link{
-  width: 50px;
-  padding-left: 8px;
-  transition: transform 1s;
-  margin-bottom: 0px;
-
-}
-
-.image-link:hover{
-  transform: rotate(360deg);
-}
 
 
 
@@ -97,6 +142,7 @@
   display: flex;
   padding-top: 70px;
   padding-bottom: 40px;
+  
  
 }
 
@@ -105,6 +151,7 @@
   font-size: 20px;
   font-weight: bold;
   font-family: "Poppins", sans-serif;
+  border: 3px solid #000000 ;
 
 }
 .Videos-Color {
@@ -136,7 +183,6 @@
   color: white;
   padding-bottom: 40px;
   justify-content: center;
- 
   display: flex;
   margin-top: 10px;
   text-shadow: 2px 2px #ff5757;
@@ -158,7 +204,7 @@
   top: 0;
 
   left:auto;
-  border: 4px solid black;
+  border: 3px solid black;
 }
 
 @media only screen and (min-width: 768px) {
@@ -173,15 +219,18 @@
 
 
 .pizza-photo {
+  display: block;
   max-width: 40%;
+  max-height: 40%;
   height: auto;
+  width: auto;
   padding: 20px;
 }
 
 @media(min-width: 768px) {
   /* For Desktop */
 .pizza-photo {
-  max-width: 25%;
+  max-width: 30%;
  
   
 }
@@ -201,15 +250,28 @@
 
 }
 
+
+
+
 .quote-text {
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
   text-align: center;
   font-style: italic;
-  margin: 0;
-  padding-top: 20px;
+  padding: 20px;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  
 }
 
+
+@media(min-width: 768px) {
+  /* For Desktop */
+  .quote-text{
+    width: 300px;
+  }
+}
 
 
 /* HOME PAGE */
@@ -246,19 +308,29 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+
+
+
 .home-div1{
   
   display: grid;
   place-items: center;
   align-content: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: rgb(255, 255, 255);
+  
+  background-color: rgba(0, 0, 0, 0.237);
   font-family: "Poppins", sans-serif;
-  width: 75%;
+  width: 350px;
   margin-inline: auto;
   border: 3px solid #000000;
 }
+
+
+@media(min-width: 768px) {
+  /* For Desktop */
+ .home-div1{
+  width: 500px;
+}
+} 
 
 .home-about{
   
@@ -266,7 +338,7 @@
   padding-left: 15px;
   padding-right: 15px;
   font-family: "Poppins", sans-serif;
-  width: 90%;
+  width: 350px;
   margin-inline: auto;
   color: beige;
   text-shadow: 1px 1px #81171B;
@@ -275,10 +347,12 @@
   
 }
 
+
  @media(min-width: 768px) {
   /* For Desktop */
  .home-about{
   font-size: 22px;
+  width: 550px;
 }
 } 
 
@@ -286,7 +360,7 @@
   display: grid;
   place-items: center;
   align-content: center;
-  padding-top: 25%;
+  padding-top: 10%;
 }
 
 .home-title{
@@ -294,22 +368,35 @@
   font-size: 50px;
   font-weight: bold;
   color: beige;
-  text-shadow: 3px 3px #81171B;
+  text-shadow: 3px 3px black;
   text-align: center;
 }
 
 .home-subheader{
   font-size: 28px;
-  color:rgb(0, 0, 0);
+  color:beige;
   text-align: center;
+  text-shadow: 2px 2px black;
 }
 
 .home-paragraph{
   font-size: 20px;
-  color:rgb(0, 0, 0);
+  color:beige;
   text-align: center;
   margin-top: 0;
+  width: 300px;
+  text-shadow: 1px 1px black;
 }
+
+
+@media(min-width: 768px) {
+  /* For Desktop View */
+.home-paragraph{
+  width: 450px; 
+  font-size: 22px;
+}
+}
+
 
 .youtube-icon{
   display: block;
@@ -322,16 +409,50 @@
 .home-tips-box{
   display: block;
   margin: auto;
-  background-color: white;
+  background-color: beige;
   font-family: "Poppins", sans-serif;
   text-align: center;
   width: 20%;
   color: black;
   margin-top: 30px;
   border: 3px solid #000000;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  
 }
+
+@media(min-width: 768px) {
+  /* For Desktop */
+.home-tips-box:hover{
+  background-color: rgba(0, 0, 0, 0.237);
+  color: beige;
+}
+}
+
+.red-button{
+  display: block;
+  margin: auto;
+  background-color: #CB342A;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  width: 150px;
+  color: beige;
+  margin-top: 30px;
+  border: 3px solid #000000;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+}
+
+@media(min-width: 768px) {
+  /* For Desktop */
+.red-button:hover{
+  background-color: beige;
+  color: #CB342A;
+}
+}
+
+
 
 .home-icon{
   height: auto;
@@ -385,11 +506,41 @@
 
 /* CUSTOMIZEDACCORDION  */
 
-.accord-dic{
+ /* .accord-di{
   margin-top: 20px;
   margin-bottom: 20px
+}  */
+
+
+/* .accord-div{
+  width: 90%;
+} */
+
+
+.accordDiv1{
+  width: 20%;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  box-shadow: none;
+  position: relative;
+  -webkit-transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  overflow-anchor: none;
+  width: 60%;
+  margin: auto;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+
 }
 
+@media(min-width: 768px) {
+  /* For Desktop */
+  .accordDiv1{
+  width: 400px;
+  
+  }
+  }
 
 /*  TIPS PAGE  */
 

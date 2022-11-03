@@ -62,7 +62,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
   borderTop: '1px solid rgba(0, 0, 0, .125)',
   backgroundColor: '#C75146',
-  color: 'white',
+  color: 'white'
  
 
   
@@ -81,7 +81,7 @@ export default function CustomizedAccordion(props) {
     accordionInfo.map((item, index) => (
     <div className='accord-div' key={index}>
       
-      <Accordion expanded={expanded == item.expandedId} onChange={handleChange(item.expandedId)}>
+      <Accordion expanded={expanded == item.expandedId} style={{width: "70%"}}  onChange={handleChange(item.expandedId)}>
         <AccordionSummary aria-controls={item.controls} id={item.header}>
           <Typography fontWeight="fontWeightBold" fontFamily={"Poppins"} fontSize={"22px"}>{item.label}</Typography>
         </AccordionSummary>

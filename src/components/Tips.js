@@ -22,7 +22,7 @@ const doughFAQ = [
     header: "panel2d-header"
     },
     {
-    label: "Why do some recipes use sugar or oil others don't?",
+    label: "Why do some recipes use sugar or oil and others don't?",
     content: "Coloration and texture! Sugars and fats both lend to better browning when baking. Sugar also helps yeast activation, acting as food for the bacteria. Fats help improve texture, keeping the crust from drying out too much in the oven, however it also can inhibit gltuen development so it is important to beware of the amount you're adding. ",
     expandedId: "panel3",
     controls: "panel3d-content",

@@ -5,9 +5,9 @@ import fire from '../assets/fire.png';
 import dough from '../assets/dough.png';
 import oven from '../assets/oven.png';
 import finsihed_pizza from '../assets/finished.png';
-import youtube_logo from '../assets/youtube.png';
 import {Link} from "react-router-dom";
 import down_arrow from '../assets/down_arrow.png';
+// import oven_vid from '../assets/Oven_Compressed.mp4';
 
 
 export const Home = () => {
@@ -51,7 +51,7 @@ export const Home = () => {
 
         <ParallaxLayer 
         speed={1}
-        offset={.8}>
+        offset={.9}>
         <div className='home-div1'>
         <h1 className='home-subheader'> Our Mission</h1>
         <p className='home-paragraph'> To explore all things pizza, to learn and develop our understanding, and to share it with you! </p>
@@ -84,11 +84,13 @@ export const Home = () => {
         <ParallaxLayer 
         speed={1}
         offset={2.5}>
-        <div>
-        <a href='https://www.youtube.com/channel/UC55OAzN0TXMQsMAfGi_jYVQ'>
-            <img className='youtube-icon'  src={youtube_logo} alt="Youtube Logo"></img>
+        <a style={{textDecoration:'none'}} href='https://www.youtube.com/channel/UC55OAzN0TXMQsMAfGi_jYVQ'>
+        <h1 className='red-button'> big red button</h1>
         </a>
-        </div>
+
+         {/* <video autoPlay loop muted>
+          <source src={oven_vid} type="video/mp4" />
+        </video> */}
         </ParallaxLayer>
 
         <ParallaxLayer 
@@ -111,7 +113,7 @@ export const Home = () => {
         </p>
         </div>
 
-        <Link to='/tips'>
+        <Link to='/tips' style={{textDecoration:'none'}}>
         <h1 className='home-tips-box'> Pizza Tips!</h1>
         </Link>
         </ParallaxLayer>
@@ -130,9 +132,8 @@ export const Home = () => {
         <ParallaxLayer 
         speed={0}
         offset={4.5}>
-        <div className='home-div1'>
-        <h1 className='home-subheader'> Still curious?</h1>
-        </div>
+        
+        <h1 style={{fontSize: "40px"}} className='home-subheader'> Still curious?</h1>
 
         </ParallaxLayer>
 

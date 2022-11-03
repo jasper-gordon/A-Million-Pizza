@@ -7,6 +7,7 @@ import '../App.css';
 import logo from "../assets/Logo.png";
 import React, {useState} from "react";
 import { resolveComponentProps } from "@mui/base";
+import git_logo from "../assets/GitHub-Mark-32px.png"
 
 
 export default function Navbar() {
@@ -29,16 +30,25 @@ export default function Navbar() {
     
     //document.getElementById("data").innerHTML = data;
     return <nav className="navbar">
-        <div>
+        
         
        
-        <div className="countBox">
+    <div className="navTop">
+        <div className="navIcon">
         <Link to="/">
             <img className="image-link" src={logo} alt="A Million Pizza Logo"></img>
         </Link>
-        <p className="pizzaCount">Pizza Count: 3390</p>
         </div>
+        <div className="countBox"> 
+            <p className="pizzaCount">Pizza Count: 3390</p>
         </div>
+        
+        <div style={{float: "right"}}>
+        <a href="https://github.com/jasper-gordon/A-Million-Pizza">
+            <img className="git-link" src={git_logo} alt="Github Logo"></img>
+        </a>
+        </div>
+    </div>
         <div className="nav-flex">
         <Link to="/pizzas" 
             className="navLink" > Pizzas</Link>
