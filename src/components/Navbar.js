@@ -26,28 +26,28 @@ import git_logo from "../assets/GitHub-Mark-32px.png";
 
 // const functions = getFunctions();
 
-const getRandom = httpsCallable(functions, "randomNumberGen");
-console.log("Calling!");
-getRandom("hello")
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((error) => {
-    console.log("We have a problem");
-  });
+// const getRandom = httpsCallable(functions, "randomNumberGen");
+// console.log("Calling!");
+// getRandom("hello")
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((error) => {
+//     console.log("We have a problem");
+//   });
 
 export default function Navbar() {
   const [count, setCount] = React.useState(0);
   
 
-  const getViewCount = httpsCallable(functions, "getViews");
-getViewCount("hello")
-  .then((result) => {
-    setCount(result.data);
-  })
-  .catch((error) => {
-    console.log("We have a problem with views:" + error);
-  });
+//   const getViewCount = httpsCallable(functions, "getViews");
+// getViewCount("hello")
+//   .then((result) => {
+//     setCount(result.data);
+//   })
+//   .catch((error) => {
+//     console.log("We have a problem with views:" + error);
+//   });
   // //Requesting YouTube View data from backend server
   // const getViews = async() => {
   //     const response = await fetch("http://localhost:8000/views")

@@ -1,6 +1,6 @@
 # Welcome to A Million Pizza Site
 
-This project utilizes React and Firebase to create a all-in-one hub for pizza related content.
+This project utilizes React and Firebase to create an all-in-one hub for pizza related content.
 
 ## Available Scripts
 
