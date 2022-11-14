@@ -1,15 +1,9 @@
 const admin = require("firebase-admin");
-// const {getFirestore, doc, setDoc} = require('firebase/firestore');
 const functions = require("firebase-functions");
-// const firebase = require('firebase');
+const { doc } = require("firebase/firestore");
 require("firebase/firestore");
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
 
-// The Cloud Functions for Firebase SDK to create Cloud Functions and set up triggers.
-
-// The Firebase Admin SDK to access Firestore.
-
+admin.initializeApp();
 
 
 
@@ -28,8 +22,15 @@ exports.getViews = functions
 exports.updateViewCount = functions.pubsub
 .schedule("every 60 minutes")
 .onRun((context) => {
-  this.logCount()
+  try{
+  this.logCount(5)
   console.log("Count updated at:", new Date() )
+  }
+  catch(error) {
+    console.error("Error getting view count: ", error);
+  };
+
+  
 });
 
 exports.logCount = functions
@@ -72,17 +73,16 @@ const getViewCount = async (key, channel) => {
 };
 
 
-// exports.returnViews = functions.https.onCall(async (data, context) => {
-//   const addData = await admin
-//       .firestore()
-//       .collection("viewCount")
-//       .doc("Count")
-//       .set({ "View Count": viewData })
-//       .then(() => {
-//         return
-
-//       })
-//       .catch((error) => {
-//         console.error("Error writing document: ", error);
-//       });
-//   });
+exports.returnViews = functions.https.onCall(async (data, context) => {
+  const addData = await admin
+      .firestore()
+      .collection("viewCount")
+      .doc("Count")
+      .get()
+      .then((result) => {
+        return result;
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
+  });

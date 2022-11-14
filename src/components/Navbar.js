@@ -20,73 +20,12 @@ import {
   getDocFromCache,
 } from "firebase/firestore";
 
-
-// async function checker() {
-//   const querySnap = await getDocs(collection(db, "viewCount"))
-//   querySnap.forEach((doc) => {
-//     console.log("made it here");
-//     console.log(doc.id, " => ", doc.data());
-//   });
-// }
-
-async function checker() {
-const docRef = doc(db, "viewCount", "Count");
-const docSnap = await getDoc(docRef);
-
-
-if (docSnap.exists()) {
-  return docSnap.get("View Count");
-} else {
-  // doc.data() will be undefined in this case
-  console.log("No such document!");
-}
-}
-
 export default function Navbar() {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = React.useState('');
 
-// checker()
-//   .then((result) => {
-//     setCount(result)
-//   });
-  
-
-
-const unsub = onSnapshot(doc(db, "viewCount", "Count"), (doc) => {
+  const unsub = onSnapshot(doc(db, "viewCount", "Count"), (doc) => {
     setCount(doc.get("View Count"));
-});
-  //   const getViewCount = httpsCallable(functions, "getViews");
-  // getViewCount()
-  //   .then((result) => {
-  //     setCount(result.data);
-  //   })
-  //   .catch((error) => {
-  //     console.log("We have a problem with views:" + error);
-  //   });
-  // //Requesting YouTube View data from backend server
-  // const getViews = async() => {
-  //     const response = await fetch("http://localhost:8000/views")
-  //     const finalData = await (response.text())
-  //     let data = await (JSON.parse(finalData))
-  //     //Updating state with view count
-  //     setCount(data.items[0].statistics.viewCount)
-
-  // }
-
-  //console.log('data', res);
-  //getViews()
-
-  //document.getElementById("data").innerHTML = data;
-
-  // const viewsCol = collection(db, 'viewCount');
-  // const viewsSnapshot = getDocs(viewsCol);
-  // console.log(viewsSnapshot);
-  // db.firestore().collection('viewCount').get().then((snapshot) => {
-  //     console.log(snapshot.docs)
-  // });
-  // const checkCount = onSnapshot(doc(db, "viewCount", "Count"), (doc) => {
-  //     console.log("Current data: ", doc.data());
-  // });
+  });
 
   return (
     <nav className="navbar">
