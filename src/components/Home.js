@@ -1,13 +1,13 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { useRef } from 'react';
 import street_pic from '../assets/street_pizza_photo.png';
-import fire from '../assets/fire.png';
 import dough from '../assets/dough.png';
 import oven from '../assets/oven.png';
 import finsihed_pizza from '../assets/finished.png';
 import {Link} from "react-router-dom";
 import down_arrow from '../assets/down_arrow.png';
 // import oven_vid from '../assets/Oven_Compressed.mp4';
+import home_page_vid from '../assets/home-page-vid.mov';
 
 
 export const Home = () => {
@@ -20,13 +20,13 @@ export const Home = () => {
     
         <ParallaxLayer 
         speed={0}
-        offset={0}
-        className={'homeImage'}
-        factor={2}
-        style={{
-            backgroundImage: `url(${fire})`,
-            backgroundSize: 'cover',
-        }}>
+        offset={0}>
+        
+      
+        <video className='videoHome' autoPlay loop muted>
+          <source src={home_page_vid} type="video/mp4" />
+         
+        </video>
         </ParallaxLayer>
 
 
@@ -34,7 +34,7 @@ export const Home = () => {
         speed={1}
         offset={0}>
         <div className='home-title-box'>
-        <h1 className='home-title'> Welcome to A Million Pizza</h1>
+        <h1 className='home-title'> Welcome to <br/> A Million Pizza</h1>
         </div>
         </ParallaxLayer>
 
@@ -75,7 +75,7 @@ export const Home = () => {
         offset={1.5}>
         <div className='home-div1'>
         <h1 className='home-subheader'> The Challenge</h1>
-        <p className='home-paragraph'> No great website is without a side quest, and ours is simple: Reach 1,000,000 views or "pizzas" on our Youtube videos. Curious? Keep scrolling to find out or click that big red button 👇
+        <p className='home-paragraph'> Make 1,000,000 pizzas. <br/> <br/> Since it might take a while (we only have ☝️ oven) our first goal is to make them ~virtually~ where we count 1 pizza each time someone watches a video of us making a pizza. Curious? Keep scrolling to learn more or click that big red button 👇
         </p>
         </div>
         </ParallaxLayer>
@@ -85,7 +85,7 @@ export const Home = () => {
         speed={1}
         offset={2.5}>
         <a style={{textDecoration:'none'}} href='https://www.youtube.com/channel/UC55OAzN0TXMQsMAfGi_jYVQ'>
-        <h1 className='red-button'> big red button</h1>
+        <h1 className='red-button'> Pizza Videos</h1>
         </a>
 
          {/* <video autoPlay loop muted>
@@ -109,7 +109,7 @@ export const Home = () => {
         offset={3.3}>
         <div className='home-div1'>
         <h1 className='home-subheader'> The Guides</h1>
-        <p className='home-paragraph'> As lifelong pizza makers we have made plenty of mistakes (ever had yeast-less pizza?), which is why we're developing a set of guides and resources to help you whereever you are on your pizza journey.
+        <p className='home-paragraph'> As lifelong pizza makers we have made plenty of mistakes (Ever had yeast-less pizza? We don't recommend it), which is why we're developing a set of guides and resources to help you whereever you are on your pizza journey!
         </p>
         </div>
 
@@ -141,7 +141,7 @@ export const Home = () => {
         speed={0}
         offset={4.95}
         >
-        <img src={down_arrow} className="down-arrow"></img>
+        <img src={down_arrow} alt="Down arrow" className="down-arrow"></img>
         </ParallaxLayer> 
 
          <ParallaxLayer 
@@ -157,7 +157,7 @@ export const Home = () => {
             About Us
           </h1>
           <p className='home-about'>
-          A Million Pizza Challenge started in November 2021 when Jasper, a lifelong dough boy and avid pizza maker, lamented to his friend Cooper, the smart and handsome one, that he was looking for a new challenge to push him to elevate his pizza, and he joked that "it would be kinda fun to make a pizza every day, like do the whole 10,000 hours thing." Cooper didn't think that was funny, and told him it was a terrible idea. After going home for the holidays, Jasper came back with an even worse idea: Make a million pizzas and film the whole thing. After Cooper ran the numbers on this (It would take about 2,000 years to make a million pizzas one at a time non-stop) and suggested instead counting each view on the Youtube video as a pizza instead. Not yet ready to give his life to the holy pie, Jasper agreed and set off on his mission to make better pizza, to make more pizza, and most of all to have fun doing it with his friends.
+          A Million Pizza Challenge started in November 2021 when Jasper, a lifelong dough boy and avid pizza maker, lamented to his friend Cooper, the smart and handsome one, that he was looking for a new challenge to push him to elevate his pizza, and joked that "it would be kinda fun to make a pizza every day, like do the whole 10,000 hours thing." Cooper didn't think that was funny, and told him it was a terrible idea. After going home for the holidays, Jasper came back with an even worse idea: Make a million pizzas and film the whole thing. After Cooper ran the numbers on this (It would take about 2,000 years to make a million pizzas one at a time non-stop) he suggested instead counting each view on the Youtube videos as a pizza instead. Not yet ready to give his life to the holy pie, Jasper agreed and set off on his mission to make better pizza, to make more pizza, and most of all to have fun doing it with his friends.
           </p>
           </div>
         
