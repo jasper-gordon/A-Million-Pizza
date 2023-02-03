@@ -16,14 +16,14 @@ const doughFAQ = [
 
   {
     label: "What flour do you use?",
-    content: "Generally speaking we like to use unbleached all-purpose or bread flour for pizza. To form a dough strong enough to handle being tossed, shaped, and topped we want a strong gluten network. That siad, there are many varieties of flour on the market from both local and national brand millers and we love to experiement!",
+    content: "Generally speaking we like to use unbleached all-purpose or bread flour for pizza. To form a dough strong enough to handle being tossed, shaped, and topped we want a strong gluten network. That said, there are many varieties of flour on the market from both local and national millers and we love to experiement!",
     expandedId: "panel2",
     controls: "panel2d-content",
     header: "panel2d-header"
     },
     {
     label: "Why do some recipes use sugar or oil and others don't?",
-    content: "Coloration and texture! Sugars and fats both lend to better browning when baking. Sugar also helps yeast activation, acting as food for the bacteria. Fats help improve texture, keeping the crust from drying out too much in the oven, however it also can inhibit gltuen development so it is important to beware of the amount you're adding. ",
+    content: "Color and texture! Sugars and fats both lend to better browning when baking. Sugar also helps activate yeast, providing food for the bacteria. Fats help improve texture, keeping the crust from drying out too much in the oven, however it also can inhibit gluten development so it is important to beware of the amount you're adding. ",
     expandedId: "panel3",
     controls: "panel3d-content",
     header: "panel3d-header"
