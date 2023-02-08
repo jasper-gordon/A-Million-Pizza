@@ -283,7 +283,7 @@
 
 
 .down-arrow{
-  width: 35px;
+  width: 40px;
   height: auto;
   margin: auto;
   display: block;
@@ -597,4 +597,20 @@
   padding-right: 5%;
   padding-top: 60px;
   padding-bottom: 20px;
+}
+
+
+/* PIZZA MAP */
+
+.leaflet-container{
+  height: 100vh;
+  width: 100vh;
+  margin: auto;
+
+
+}
+
+.map{
+  height: 50vh;
+  width: 100vh;
 }
