@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Joe's",
+    "position" : [40.7332732, -73.9876565],
+    "city": "New York",
+    "crust": "0",
+    "sauce": "0",
+    "cheese": "4"
+  },
+
+  {
+    "name": "Upside Pizza",
+    "position" : [40.72163009643555, -73.99549102783203],
+    "latitude": "jodfsdf",
+    "city": "New York",
+    "crust": "0",
+    "sauce": "0",
+    "cheese": "4"
+  },
+
+  {
+    "name": "Lombardi's",
+    "position" : [40.7216329, -73.9957229],
+    "latitude": "jodfsdf",
+    "city": "New York",
+    "crust": "0",
+    "sauce": "0",
+    "cheese": "4"
+  },
+
+  {
+    "name": "Scarr's",
+    "position" : [40.717613220214844, -73.99049377441406],
+    "latitude": "jodfsdf",
+    "city": "New York",
+    "crust": "0",
+    "sauce": "0",
+    "cheese": "4"
+  },
+
+  {
+    "name": "Apizza Scholls",
+    "position" : [45.512027740478516, -122.61577606201172],
+    "latitude": "jodfsdf",
+    "city": "New York",
+    "crust": "0",
+    "sauce": "0",
+    "cheese": "4"
+  }
+]

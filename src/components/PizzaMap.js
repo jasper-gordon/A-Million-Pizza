@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 import "../App.css";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import reviews from "./pizza_reviews.json";
 
 function GetIcon(iconSize1) {
   return L.icon({
@@ -19,7 +20,15 @@ export default function PizzaMap() {
     { name: "Joe's Pizza", position: [40.7332732, -73.9876565]},
   ];
 
+const [spot, changeSpot] = useState("Party woo!")
+const [searchTerm, setSearchTerm] = useState("");
   return (
+    <>
+    <div className='video-search-box' >
+    <input className='video-search-input' type="text" placeholder='Search...' onChange={(event) => {
+      setSearchTerm(event.target.value);
+    }}/>
+    </div>
     <div>
       <MapContainer
         className="leaflet-container"
@@ -36,9 +45,18 @@ export default function PizzaMap() {
 attribution='<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank" class="jawg-attrib">&copy; <b>Jawg</b>Maps</a> | <a href="https://www.openstreetmap.org/copyright" title="OpenStreetMap is open data licensed under ODbL" target="_blank" class="osm-attrib">&copy; OSM contributors</a>'
 url="https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=${RETENTER API KEY}"
 /> */}
-        {locations.map((location, i) => (
-          <Marker position={location.position} icon={GetIcon(20)}>
-            <Popup>{location.name}</Popup>
+        {reviews.filter((shop) => {
+          if (searchTerm == ""){
+            return shop
+          } else if (shop.name.toLocaleLowerCase().includes(searchTerm.toLowerCase())) {
+            return shop
+          } else if (shop.city.toLocaleLowerCase().includes(searchTerm.toLowerCase())) {
+            return shop
+          }
+
+        }).map((review, i) => (
+          <Marker position={review.position} icon={GetIcon(20)}>
+            <Popup>{review.name}</Popup>
           </Marker>
         ))}
         {/* <Marker position={[40.758, -73.9855]} icon={GetIcon(20)}>
@@ -48,5 +66,8 @@ url="https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=${RETENTER API
   </Marker> */}
       </MapContainer>
     </div>
+    <h1>{spot}</h1>
+    </>
   );
+ 
 }
