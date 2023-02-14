@@ -6,7 +6,10 @@ import "../App.css";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import reviews from "./pizza_reviews.json";
+import Review from "./Review";
+import { AlignHorizontalLeft } from "@mui/icons-material";
 
+// Setting the icon image for map markers
 function GetIcon(iconSize1) {
   return L.icon({
     iconUrl: require("../assets/Icons/pizza_icon.png"),
@@ -15,25 +18,26 @@ function GetIcon(iconSize1) {
 }
 
 export default function PizzaMap() {
-  const locations = [
-    { name: "Upside Pizza", position: [40.7216, -73.9954] },
-    { name: "Joe's Pizza", position: [40.7332732, -73.9876565]},
-  ];
-
+  
 const [spot, changeSpot] = useState("Party woo!")
 const [searchTerm, setSearchTerm] = useState("");
-  return (
+  
+return (
     <>
-    <div className='video-search-box' >
+    <p className="map-header"> The Pizza Map</p>
+    <div className='map-search-box' >
+    
+    {/* Search box that filters restaurants as user types */}
     <input className='video-search-input' type="text" placeholder='Search...' onChange={(event) => {
       setSearchTerm(event.target.value);
     }}/>
     </div>
-    <div>
+    <div className="map-list-box">
+      <div className="wide-map">
       <MapContainer
         className="leaflet-container"
-        center={[40.758, -73.9855]}
-        zoom={13}
+        center={[40.758, -73.9855]} 
+        zoom={14}
         scrollWheelZoom={false}
       >
         <TileLayer
@@ -55,7 +59,7 @@ url="https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=${RETENTER API
           }
 
         }).map((review, i) => (
-          <Marker position={review.position} icon={GetIcon(20)}>
+          <Marker position={review.position} icon={GetIcon(26)}>
             <Popup>{review.name}</Popup>
           </Marker>
         ))}
@@ -65,8 +69,36 @@ url="https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=${RETENTER API
     </Popup>
   </Marker> */}
       </MapContainer>
+      </div>
+
+    {/* A side menu to list all restuarent Review component cards */}
+      <div className="side-list">
+        <h2 style={{alignItem: "center", justifyContent: "center"}}> Results</h2>
+        {reviews.map((review) => { //Mapping over all reviews and making a Review component
+          return (
+          <Review
+          name={review.name} 
+          city={review.city} 
+          score={review.score}
+          sauce={review.sauce} 
+          cheese={review.cheese}
+          crust={review.crust}
+          price={review.price}
+          />
+        );})}
+      </div>
     </div>
     <h1>{spot}</h1>
+    <div>
+    <div className="review-header">
+    <h2>Lombardis</h2>
+    <h2>$4.50</h2>
+    <h2>6</h2>
+    </div>
+    <h1>Crust: Fine</h1>
+    <h1>Cheese: Fine</h1>
+    <h1>Sauce: Fine</h1>
+</div>
     </>
   );
  

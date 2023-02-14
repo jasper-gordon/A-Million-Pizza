@@ -3,48 +3,55 @@
     "name": "Joe's",
     "position" : [40.7332732, -73.9876565],
     "city": "New York",
-    "crust": "0",
-    "sauce": "0",
-    "cheese": "4"
+    "crust": "5",
+    "sauce": "2",
+    "score": "2",
+    "cheese": "4",
+    "price": "$3.75"
+    
   },
 
   {
     "name": "Upside Pizza",
     "position" : [40.72163009643555, -73.99549102783203],
-    "latitude": "jodfsdf",
     "city": "New York",
-    "crust": "0",
-    "sauce": "0",
-    "cheese": "4"
+    "crust": "6",
+    "sauce": "2.4",
+    "score": "3",
+    "cheese": "4",
+    "price": "$2.50"
   },
 
   {
     "name": "Lombardi's",
     "position" : [40.7216329, -73.9957229],
-    "latitude": "jodfsdf",
     "city": "New York",
-    "crust": "0",
-    "sauce": "0",
-    "cheese": "4"
+    "crust": "3",
+    "sauce": "9",
+    "score": "2",
+    "cheese": "2",
+    "price": "$4.25"
   },
 
   {
     "name": "Scarr's",
     "position" : [40.717613220214844, -73.99049377441406],
-    "latitude": "jodfsdf",
     "city": "New York",
-    "crust": "0",
-    "sauce": "0",
-    "cheese": "4"
+    "crust": "10",
+    "sauce": "2",
+    "score": "6",
+    "cheese": "1",
+    "price": "$4"
   },
 
   {
     "name": "Apizza Scholls",
     "position" : [45.512027740478516, -122.61577606201172],
-    "latitude": "jodfsdf",
     "city": "New York",
-    "crust": "0",
-    "sauce": "0",
-    "cheese": "4"
+    "crust": "10",
+    "sauce": "10",
+    "score": "9",
+    "cheese": "10",
+    "price": "$3.95"
   }
 ]

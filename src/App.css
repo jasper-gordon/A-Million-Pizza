@@ -603,13 +603,82 @@
 
 .leaflet-container{
   height: 100vh;
-  width: 100vh;
-  margin: auto;
+  width: auto;
+  margin: 0;
 
 
 }
 
 .map{
-  height: 50vh;
-  width: 100vh;
+  height: 200px;
+  width: 200px;
+
+}
+
+
+.map-header{
+  font-family: 'Poppins', sans-serif;
+  font-size: 60px;
+  text-align: center;
+  color: white;
+  text-shadow: 6px 6px #ff5757;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: #F6BC65;
+}
+
+/* Map + Side List Container */
+.map-list-box{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Main Map Container */
+.wide-map{ 
+flex: 70%;
+background-color: #CB342A;
+}
+
+/* Side List Contaier */
+.side-list{
+  flex: 30%;
+  background-color: #F6BC65;
+}
+
+/* Searching Box for Map */
+.map-search-box{ 
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color:  #F6BC65;
+  
+ 
+}
+
+
+/* REVIEWS */
+
+.review-header{
+  display: flex;
+  border-bottom: 5px solid #000000;
+  margin: auto;
+}
+
+.review-header > div {
+ /* Copied most of this css from FAQ sub-header, temporary */
+  margin: auto;
+  padding: 10x;
+  font-size: 30px;
+  font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px #ff5757;
+    font-weight: bold;
+    
+   
+  
 }
