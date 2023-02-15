@@ -7,6 +7,7 @@ import { Pizzas } from './components/Pizzas'
 import {Calculator} from './components/Calculator'
 import Navbar from './components/Navbar'
 import PizzaMap from './components/PizzaMap'
+import AboutUs from './components/AboutUs'
 import './App.css';
 import { entries } from 'lodash';
 import {lazy, Suspense} from 'react';
@@ -34,6 +35,7 @@ function App() {
         <Route path='*' element={<NoPage />} />
         <Route path='/calculator' element={<Calculator />} />
         <Route path='/map' element={<PizzaMap />} />
+        <Route path='/aboutus' element={<AboutUs />}/>
       </Routes>
     {/* </Suspense> */}
     </div>
