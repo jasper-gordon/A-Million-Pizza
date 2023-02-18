@@ -8,6 +8,7 @@ import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import reviews from "./pizza_reviews.json";
 import Review from "./Review";
 import { AlignHorizontalLeft } from "@mui/icons-material";
+import LocationMarker from "./LocationMarker";
 
 // Setting the icon image for map markers
 function GetIcon(iconSize1) {
@@ -40,6 +41,7 @@ return (
         zoom={14}
         scrollWheelZoom={false}
       >
+        {/* <LocationMarker></LocationMarker> */}
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
