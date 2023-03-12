@@ -19,89 +19,117 @@ function GetIcon(iconSize1) {
 }
 
 export default function PizzaMap() {
-  
-const [spot, changeSpot] = useState("Party woo!")
-const [searchTerm, setSearchTerm] = useState("");
-  
-return (
+  const [spot, changeSpot] = useState("Party woo!");
+  const [searchTerm, setSearchTerm] = useState("");
+
+  return (
     <>
-    <p className="map-header"> The Pizza Map</p>
-    <div className='map-search-box' >
-    
-    {/* Search box that filters restaurants as user types */}
-    <input className='video-search-input' type="text" placeholder='Search...' onChange={(event) => {
-      setSearchTerm(event.target.value);
-    }}/>
-    </div>
-    <div className="map-list-box">
-      <div className="wide-map">
-      <MapContainer
-        className="leaflet-container"
-        center={[40.758, -73.9855]} 
-        zoom={14}
-        scrollWheelZoom={false}
-      >
-        {/* <LocationMarker></LocationMarker> */}
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-{/* <TileLayer
+      <p className="map-header"> The Pizza Map</p>
+      <div className="map-container">
+        <div className="map-search-box">
+          {/* Search box that filters restaurants as user types */}
+          <input
+            className="video-search-input"
+            type="text"
+            placeholder="Search..."
+            onChange={(event) => {
+              setSearchTerm(event.target.value);
+            }}
+          />
+        </div>
+        <div className="map-list-box">
+          <div className="wide-map">
+            <MapContainer
+              className="leaflet-container"
+              center={[40.758, -73.9855]}
+              zoom={14}
+              scrollWheelZoom={false}
+            >
+              {/* <LocationMarker></LocationMarker> */}
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              {/* <TileLayer
 //MAKE SURE TO REMOVE ACCESS TOKEN
 attribution='<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank" class="jawg-attrib">&copy; <b>Jawg</b>Maps</a> | <a href="https://www.openstreetmap.org/copyright" title="OpenStreetMap is open data licensed under ODbL" target="_blank" class="osm-attrib">&copy; OSM contributors</a>'
 url="https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=${RETENTER API KEY}"
 /> */}
-        {reviews.filter((shop) => {
-          if (searchTerm == ""){
-            return shop
-          } else if (shop.name.toLocaleLowerCase().includes(searchTerm.toLowerCase())) {
-            return shop
-          } else if (shop.city.toLocaleLowerCase().includes(searchTerm.toLowerCase())) {
-            return shop
-          }
-
-        }).map((review, i) => (
-          <Marker position={review.position} icon={GetIcon(26)}>
-            <Popup>{review.name}</Popup>
-          </Marker>
-        ))}
-        {/* <Marker position={[40.758, -73.9855]} icon={GetIcon(20)}>
+              {reviews
+                .filter((shop) => {
+                  if (searchTerm == "") {
+                    return shop;
+                  } else if (
+                    shop.name
+                      .toLocaleLowerCase()
+                      .includes(searchTerm.toLowerCase())
+                  ) {
+                    return shop;
+                  } else if (
+                    shop.city
+                      .toLocaleLowerCase()
+                      .includes(searchTerm.toLowerCase())
+                  ) {
+                    return shop;
+                  }
+                })
+                .map((review, i) => (
+                  <Marker position={review.position} icon={GetIcon(26)}>
+                    <Popup>{review.name}</Popup>
+                  </Marker>
+                ))}
+              {/* <Marker position={[40.758, -73.9855]} icon={GetIcon(20)}>
     <Popup>
       A pretty CSS3 popup. <br /> Easily customizable.
     </Popup>
   </Marker> */}
-      </MapContainer>
-      </div>
+            </MapContainer>
+          </div>
+        </div>
 
-    {/* A side menu to list all restuarent Review component cards */}
-      <div className="side-list">
-        <h2 style={{alignItem: "center", justifyContent: "center"}}> Results</h2>
-        {reviews.map((review) => { //Mapping over all reviews and making a Review component
-          return (
-          <Review
-          name={review.name} 
-          city={review.city} 
-          score={review.score}
-          sauce={review.sauce} 
-          cheese={review.cheese}
-          crust={review.crust}
-          price={review.price}
-          />
-        );})}
+        {/* A side menu to list all restuarent Review component cards */}
+        <div className="side-list">
+          <h2 style={{ alignItem: "center", justifyContent: "center", margin: 0}}>
+            {" "}
+            Results
+          </h2>
+          {reviews
+          
+          .filter((bob) => {
+            if (searchTerm == "") {
+              return bob;
+            } else if (
+              bob.name
+                .toLocaleLowerCase()
+                .includes(searchTerm.toLowerCase())
+            ) {
+              return bob;
+            } else if (
+              bob.city
+                .toLocaleLowerCase()
+                .includes(searchTerm.toLowerCase())
+            ) {
+              return bob;
+            }
+          })
+          .map((review) => {
+            //Mapping over all reviews and making a Review component
+            return (
+              <Review
+                name={review.name}
+                city={review.city}
+                score={review.score}
+                sauce={review.sauce}
+                cheese={review.cheese}
+                crust={review.crust}
+                price={review.price}
+              />
+            );
+          })}
+        </div>
       </div>
-    </div>
-    <h1>{spot}</h1>
-    <div>
-    <div className="review-header">
-    <h2>Lombardis</h2>
-    <h2>$4.50</h2>
-    <h2>6</h2>
-    </div>
-    <h1>Crust: Fine</h1>
-    <h1>Cheese: Fine</h1>
-    <h1>Sauce: Fine</h1>
-</div>
+      {/* <h1>{spot}</h1>
+       */}
     </>
   );
- 
 }
