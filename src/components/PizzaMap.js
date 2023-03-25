@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, useMap, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMap, Popup, ZoomControl } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "../App.css";
@@ -42,9 +42,11 @@ export default function PizzaMap() {
             <MapContainer
               className="leaflet-container"
               center={[40.758, -73.9855]}
-              zoom={14}
-              scrollWheelZoom={false}
+              zoom={15}
+              scrollWheelZoom={true}
+              zoomControl={false}
             >
+              <ZoomControl position="bottomleft"/>
               {/* <LocationMarker></LocationMarker> */}
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -53,7 +55,7 @@ export default function PizzaMap() {
               {/* <TileLayer
 //MAKE SURE TO REMOVE ACCESS TOKEN
 attribution='<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank" class="jawg-attrib">&copy; <b>Jawg</b>Maps</a> | <a href="https://www.openstreetmap.org/copyright" title="OpenStreetMap is open data licensed under ODbL" target="_blank" class="osm-attrib">&copy; OSM contributors</a>'
-url="https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=${RETENTER API KEY}"
+url="https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=ADD TOKEN HERE FROM WEBSITE WHEN API SORTED OUT"
 /> */}
               {reviews
                 .filter((shop) => {
@@ -75,7 +77,7 @@ url="https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=${RETENTER API
                 })
                 .map((review, i) => (
                   <Marker position={review.position} icon={GetIcon(26)}>
-                    <Popup>{review.name}</Popup>
+                    <Popup><b>{review.name}</b> <br></br> {review.score}/10, {review.price}</Popup>
                   </Marker>
                 ))}
               {/* <Marker position={[40.758, -73.9855]} icon={GetIcon(20)}>
