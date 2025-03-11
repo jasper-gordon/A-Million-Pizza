@@ -1,152 +1,145 @@
+/**
+ * PizzaMap component that displays an interactive map of pizza restaurants
+ * with their reviews and ratings. Features include search functionality
+ * and detailed review cards for each location.
+ * 
+ * @component
+ */
+
 import React, { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, useMap, Popup, ZoomControl } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "../App.css";
-import icon from "leaflet/dist/images/marker-icon.png";
-import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import reviews from "./pizza_reviews.json";
 import Review from "./Review";
-import { AlignHorizontalLeft } from "@mui/icons-material";
-import LocationMarker from "./LocationMarker";
 
-// Setting the icon image for map markers
-function GetIcon(iconSize1) {
+/**
+ * @typedef {Object} PizzaReview
+ * @property {string} name - Restaurant name
+ * @property {string} city - Restaurant city
+ * @property {number} score - Overall rating out of 10
+ * @property {number} sauce - Sauce rating
+ * @property {number} cheese - Cheese rating
+ * @property {number} crust - Crust rating
+ * @property {string} price - Price category
+ * @property {[number, number]} position - [latitude, longitude]
+ */
+
+/**
+ * Creates a custom pizza marker icon
+ * @param {number} size - Size of the icon in pixels
+ * @returns {L.Icon} Leaflet icon instance
+ */
+const createPizzaIcon = (size) => {
   return L.icon({
     iconUrl: require("../assets/Icons/pizza_icon.png"),
-    iconSize: iconSize1,
+    iconSize: [size, size],
   });
-}
+};
+
+/**
+ * Filters pizza reviews based on search term
+ * @param {PizzaReview[]} reviews - Array of pizza reviews
+ * @param {string} searchTerm - Search term to filter by
+ * @returns {PizzaReview[]} Filtered reviews
+ */
+const filterReviews = (reviews, searchTerm) => {
+  if (!searchTerm) return reviews;
+  
+  const searchLower = searchTerm.toLowerCase();
+  return reviews.filter(
+    (review) => 
+      review.name.toLowerCase().includes(searchLower) ||
+      review.city.toLowerCase().includes(searchLower)
+  );
+};
 
 export default function PizzaMap() {
-  const [selectedMarker, changeMarker] = useState("Joes");
+  const [selectedMarker, setSelectedMarker] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    console.log(selectedMarker);
-  }, [selectedMarker]); //Dependency array so it knows what to look at
-
-
-  // handleClick(() => {
-  //   const { lat, lng } = event.latlng
-  //   console.log(`Clicked at ${lat}, ${lng}`)
-  // });
+  // Filter reviews based on search term
+  const filteredReviews = filterReviews(reviews, searchTerm);
 
   return (
-    <>
-      <p className="map-header"> The Pizza Map</p>
-      <div className="map-container">
-        <div className="map-search-box">
-          {/* Search box that filters restaurants as user types */}
-          <input
-            className="video-search-input"
-            type="text"
-            placeholder="Search..."
-            onChange={(event) => {
-              setSearchTerm(event.target.value);
-            }}
-          />
-        </div>
-        <div className="map-list-box">
-          <div className="wide-map">
-            <MapContainer
-              className="leaflet-container"
-              center={[40.758, -73.9855]}
-              zoom={15}
-              scrollWheelZoom={true}
-              zoomControl={false}
-            >
-              <ZoomControl position="bottomleft"/>
-              {/* <LocationMarker></LocationMarker> */}
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              {/* <TileLayer
-//MAKE SURE TO REMOVE ACCESS TOKEN
-attribution='<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank" class="jawg-attrib">&copy; <b>Jawg</b>Maps</a> | <a href="https://www.openstreetmap.org/copyright" title="OpenStreetMap is open data licensed under ODbL" target="_blank" class="osm-attrib">&copy; OSM contributors</a>'
-url="https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=ADD TOKEN HERE FROM WEBSITE WHEN API SORTED OUT"
-/> */}
-              {reviews
-                .filter((shop) => {
-                  if (searchTerm == "") {
-                    return shop;
-                  } else if (
-                    shop.name
-                      .toLocaleLowerCase()
-                      .includes(searchTerm.toLowerCase())
-                  ) {
-                    return shop;
-                  } else if (
-                    shop.city
-                      .toLocaleLowerCase()
-                      .includes(searchTerm.toLowerCase())
-                  ) {
-                    return shop;
-                  }
-                })
-                .map((review, i) => (
-                  <Marker
-                  key={review.name} //Adding a unique key that changes when state changes
-                  position={review.position}
-                  icon={GetIcon(26)}
-                  // onClick={this.handleClick} // <-- call handleClick()
-                  >
-                    <Popup><b>{review.name}</b> <br></br> {review.score}/10, {review.price}</Popup>
-                  </Marker>
-                ))}
-              {/* <Marker position={[40.758, -73.9855]} icon={GetIcon(20)}>
-    <Popup>
-      A pretty CSS3 popup. <br /> Easily customizable.
-    </Popup>
-  </Marker> */}
-            </MapContainer>
-          </div>
+    <div className="map-container">
+      <h1 className="map-header">The Pizza Map</h1>
+      
+      {/* Search input */}
+      <div className="map-search-box">
+        <input
+          className="video-search-input"
+          type="text"
+          placeholder="Search restaurants or cities..."
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+          aria-label="Search pizza restaurants"
+        />
+      </div>
+
+      <div className="map-list-box">
+        {/* Map display */}
+        <div className="wide-map">
+          <MapContainer
+            className="leaflet-container"
+            center={[40.758, -73.9855]}
+            zoom={15}
+            scrollWheelZoom={true}
+            zoomControl={false}
+          >
+            <ZoomControl position="bottomleft" />
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            
+            {/* Restaurant markers */}
+            {filteredReviews.map((review) => (
+              <Marker
+                key={review.name}
+                position={review.position}
+                icon={createPizzaIcon(26)}
+                eventHandlers={{
+                  click: () => setSelectedMarker(review.name)
+                }}
+              >
+                <Popup>
+                  <strong>{review.name}</strong>
+                  <br />
+                  {review.score}/10, {review.price}
+                </Popup>
+              </Marker>
+            ))}
+          </MapContainer>
         </div>
 
-        {/* A side menu to list all restuarent Review component cards */}
+        {/* Review cards sidebar */}
         <div className="side-list">
-          <h2 style={{ alignItem: "center", justifyContent: "center", margin: 0}}>
-            {" "}
-            Results
+          <h2 style={{ margin: 0, textAlign: 'center' }}>
+            {filteredReviews.length} Results
           </h2>
-          {reviews
           
-          .filter((bob) => {
-            if (searchTerm == "") {
-              return bob;
-            } else if (
-              bob.name
-                .toLocaleLowerCase()
-                .includes(searchTerm.toLowerCase())
-            ) {
-              return bob;
-            } else if (
-              bob.city
-                .toLocaleLowerCase()
-                .includes(searchTerm.toLowerCase())
-            ) {
-              return bob;
-            }
-          })
-          .map((review) => {
-            //Mapping over all reviews and making a Review component
-            return (
-              <Review
-                name={review.name}
-                city={review.city}
-                score={review.score}
-                sauce={review.sauce}
-                cheese={review.cheese}
-                crust={review.crust}
-                price={review.price}
-              />
-            );
-          })}
+          {filteredReviews.map((review) => (
+            <Review
+              key={review.name}
+              name={review.name}
+              city={review.city}
+              score={review.score}
+              sauce={review.sauce}
+              cheese={review.cheese}
+              crust={review.crust}
+              price={review.price}
+            />
+          ))}
+          
+          {filteredReviews.length === 0 && (
+            <p style={{ textAlign: 'center', padding: '1rem' }}>
+              No restaurants found matching your search.
+            </p>
+          )}
         </div>
       </div>
-      <h1>Here it is: {selectedMarker}</h1>
-      
-    </>
+    </div>
   );
 }

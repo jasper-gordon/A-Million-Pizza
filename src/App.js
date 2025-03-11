@@ -1,4 +1,12 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+/**
+ * Main application component that handles routing and layout.
+ * Implements a React Router setup with navigation and lazy-loaded components.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered application with routing
+ */
+
+import { Routes, Route } from 'react-router-dom'
 import { Home } from './components/Home'
 import { NoPage } from './components/NoPage'
 import { Videos } from './components/Videos'
@@ -28,14 +36,21 @@ function App() {
     <div className='container'>
     {/* <Suspense fallback={<div>Loading...</div>}> */}
       <Routes>
+        {/* Main Routes */}
         <Route path='/' element={<Home />} />
         <Route path='/videos' element={<Videos />} />
         <Route path='/tips' element={<Tips />} />
         <Route path='/pizzas' element={<Pizzas />} />
-        <Route path='*' element={<NoPage />} />
+        
+        {/* Interactive Features */}
         <Route path='/calculator' element={<Calculator />} />
         <Route path='/map' element={<PizzaMap />} />
+        
+        {/* Information Pages */}
         <Route path='/aboutus' element={<AboutUs />}/>
+        
+        {/* 404 Route */}
+        <Route path='*' element={<NoPage />} />
       </Routes>
     {/* </Suspense> */}
     </div>
