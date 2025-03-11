@@ -221,63 +221,84 @@
 }
 
 .videos-flexbox {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default 1 column for mobile */
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+}
+
+@media(min-width: 768px) {
+  /* For Desktop */
+  .videos-flexbox {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+    max-width: 1500px; /* Prevent excessive stretching on very wide screens */
+    margin: 0 auto; /* Center the grid */
+  }
+}
+
+.video {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1rem;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  
+  flex-direction: column;
 }
 
-.video{
-  width: 75%;
-  height: auto;
-  margin: auto;
-  
-
- 
-  
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  width: 100%;
 }
 
-.video-title{
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.video-title-wrapper {
+  height: 5em; /* Adjusted for the larger font size */
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.video-title {
   font-weight: bold;
   font-size: 30px;
   color: white;
-  padding-bottom: 40px;
-  justify-content: center;
-  display: flex;
-  margin-top: 10px;
+  margin: 0;
+  padding-top: 10px;
+  font-family: "Poppins", sans-serif;
   text-shadow: 2px 2px #ff5757;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Reduced to 2 lines since font is larger */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
   text-align: center;
 }
+
+.video-search-box {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.video-search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 .pizzavideo{
   display: flex;
   justify-content: center;
 }
-
-.player-wrapper{
-  position: relative;
-  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
-}
-
-.react-player{
-  position: absolute;
-  margin: auto;
-  top: 0;
-
-  left:auto;
-  border: 3px solid black;
-}
-
-@media only screen and (min-width: 768px) {
-  /* For Desktop */
-  .video{
-    width: 45%;
-    margin: auto;
-  }
-}
-
-
-
 
 .pizza-photo {
   display: block;

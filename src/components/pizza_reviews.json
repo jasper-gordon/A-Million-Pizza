@@ -46,8 +46,8 @@
 
   {
     "name": "Apizza Scholls",
-    "position" : [45.512027740478516,-122.61577606201172],
-    "city": "New York",
+    "position" : [45.51273509900534, -122.61300165397043],
+    "city": "Portland",
     "crust": "10",
     "sauce": "10",
     "score": "9",

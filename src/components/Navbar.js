@@ -7,7 +7,7 @@ import { type } from "@testing-library/user-event/dist/type";
 import { Link } from "react-router-dom";
 import "../App.css";
 import logo from "../assets/Logo.png";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { resolveComponentProps } from "@mui/base";
 import git_logo from "../assets/GitHub-Mark-32px.png";
 import {
@@ -21,11 +21,40 @@ import {
 } from "firebase/firestore";
 
 export default function Navbar() {
-  const [count, setCount] = React.useState('');
+  const [count, setCount] = React.useState('...');
+  const [error, setError] = React.useState(null);
 
-  const unsub = onSnapshot(doc(db, "viewCount", "Count"), (doc) => {
-    setCount(doc.get("View Count"));
-  });
+  React.useEffect(() => {
+    // Get cached count if available
+    const cachedCount = localStorage.getItem('viewCount');
+    if (cachedCount) {
+      setCount(cachedCount);
+    }
+
+    // Subscribe to real-time updates
+    const unsub = onSnapshot(doc(db, "viewCount", "Count"), 
+      (doc) => {
+        if (doc.exists()) {
+          const newCount = doc.get("View Count");
+          setCount(newCount);
+          setError(null);
+          // Cache the new count
+          localStorage.setItem('viewCount', newCount);
+        } else {
+          setCount('--');
+          setError('No count available');
+        }
+      },
+      (error) => {
+        console.error("Error fetching count:", error);
+        setCount('--');
+        setError('Error fetching count');
+      }
+    );
+
+    // Cleanup subscription on unmount
+    return () => unsub();
+  }, []);
 
   return (
     <nav className="navbar">
@@ -40,7 +69,9 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="countBox">
-          <p className="pizzaCount">Pizza Count: {count}</p>
+          <p className="pizzaCount">
+            Pizza Count: {error ? '--' : count}
+          </p>
         </div>
 
         <div style={{ float: "right" }}>

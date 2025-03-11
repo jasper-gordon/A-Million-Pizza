@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, useMap, Popup, ZoomControl } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -19,8 +19,18 @@ function GetIcon(iconSize1) {
 }
 
 export default function PizzaMap() {
-  const [spot, changeSpot] = useState("Party woo!");
+  const [selectedMarker, changeMarker] = useState("Joes");
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    console.log(selectedMarker);
+  }, [selectedMarker]); //Dependency array so it knows what to look at
+
+
+  // handleClick(() => {
+  //   const { lat, lng } = event.latlng
+  //   console.log(`Clicked at ${lat}, ${lng}`)
+  // });
 
   return (
     <>
@@ -76,7 +86,12 @@ url="https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=ADD TOKEN HERE
                   }
                 })
                 .map((review, i) => (
-                  <Marker position={review.position} icon={GetIcon(26)}>
+                  <Marker
+                  key={review.name} //Adding a unique key that changes when state changes
+                  position={review.position}
+                  icon={GetIcon(26)}
+                  // onClick={this.handleClick} // <-- call handleClick()
+                  >
                     <Popup><b>{review.name}</b> <br></br> {review.score}/10, {review.price}</Popup>
                   </Marker>
                 ))}
@@ -130,8 +145,8 @@ url="https://tile.jawg.io/jawg-sunny/{z}/{x}/{y}.png?access-token=ADD TOKEN HERE
           })}
         </div>
       </div>
-      {/* <h1>{spot}</h1>
-       */}
+      <h1>Here it is: {selectedMarker}</h1>
+      
     </>
   );
 }
