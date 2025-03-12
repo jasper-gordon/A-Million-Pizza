@@ -16,6 +16,7 @@ import {Calculator} from './components/Calculator'
 import Navbar from './components/Navbar'
 import PizzaMap from './components/PizzaMap'
 import AboutUs from './components/AboutUs'
+import DoughCalculator from './components/DoughCalculator'
 import './App.css';
 import { entries } from 'lodash';
 import {lazy, Suspense} from 'react';
@@ -44,6 +45,7 @@ function App() {
         
         {/* Interactive Features */}
         <Route path='/calculator' element={<Calculator />} />
+        <Route path='/dough-calculator' element={<DoughCalculator />} />
         <Route path='/map' element={<PizzaMap />} />
         
         {/* Information Pages */}

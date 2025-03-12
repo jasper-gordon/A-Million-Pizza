@@ -93,6 +93,10 @@ export default function Navbar() {
           {" "}
           Tips
         </Link>
+        <Link to="/dough-calculator" className="navLink">
+          {" "}
+          Dough Calculator
+        </Link>
       </div>
     </nav>
   );
