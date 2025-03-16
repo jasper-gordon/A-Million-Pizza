@@ -66,74 +66,146 @@
 .navbar {
   background-color: #C75146;
   border-bottom: 3px solid #000000;
+  height: auto;
+  min-height: 50px;
 }
 
-.navTop{
-  text-align: center;
-  padding-top: 4px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 0;
+.navTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 16px;
+  height: 40px;
+}
+
+.countBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  display: block;
-}
-
-.countBox{
-  display: inline-block;
-}
-
-.pizzaCount{
-  color: white;
-  text-shadow: 3px 3px #81171B;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  padding: 0;
 }
 
+.pizzaCount {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px #81171B;
+  margin: 0;
+  padding: 4px;
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+
+.milestone-popup {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F6BC65;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  text-shadow: 1px 1px #81171B;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: popIn 0.5s ease-out forwards;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Add a subtle pulse animation when the count changes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pizzaCount.updating {
+  animation: pulse 0.5s ease-in-out;
+}
 
 @media(min-width: 768px) {
   /* For Desktop */
-  .pizzaCount{
+  .navTop {
+    height: 50px;
+    padding: 4px 24px;
+  }
 
-    font-size: 35px;
+  .pizzaCount {
+    font-size: 24px;
   }
+
+  .image-link {
+    width: 32px;
   }
+
+  .git-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navLink {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+
+  .nav-flex {
+    height: 40px;
+  }
+
+  .image-link:hover {
+    transform: rotate(360deg);
+  }
+
+  .git-link:hover {
+    transform: scale(1.1);
+  }
+
+  .navLink:hover {
+    color: #F6BC65;
+  }
+}
 
 .navIcon{
   float: left;
 }
 
 .image-link{
-  width: 30px;
+  width: 24px;
   transition: transform 1s;
-  margin-bottom: -10px;
-  white-space: nowrap;
-  padding-top: 4px;
- 
-
+  margin: 0;
+  padding: 0;
 }
 
-@media(min-width: 768px) {
-  /* For Desktop */
-.image-link{
-  width: 50px;
-}
-}
-
-
-@media(min-width: 768px) {
-  /* For Desktop */
-.image-link:hover{
-  transform: rotate(360deg);
-}
-}
-
-
-
-.git-link{
-/* background-color: white; */
+.git-link {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
 }
 
 .NavColor {
@@ -156,27 +228,19 @@
 .navLink{
   color: white;
   text-shadow: 2px 2px #81171B;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 5px;
-  padding-top: 0px;
-  padding-left: 0px;
+  padding: 4px 8px;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
-}
-
-@media(min-width: 768px) {
-  /* For Desktop */
-.navLink:hover{
- color:#F6BC65;
- 
-}
 }
 
 .nav-flex{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 4px 0;
+  height: 32px;
 }
 
 
@@ -300,30 +364,41 @@
   justify-content: center;
 }
 
+.pizza-photo-wrapper {
+  position: relative;
+  width: 40%;
+  max-width: 400px;
+  margin: 10px;
+  aspect-ratio: 1;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 .pizza-photo {
-  display: block;
-  max-width: 40%;
-  max-height: 40%;
-  height: auto;
-  width: auto;
-  padding: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 @media(min-width: 768px) {
-  /* For Desktop */
-.pizza-photo {
-  max-width: 30%;
- 
+  .pizza-photo-wrapper {
+    width: 30%;
+  }
   
+  .pizza-photo:hover {
+    transform: scale(1.05);
+  }
 }
-}
-
 
 .pizza-container {
   display: flex;
   flex-wrap: wrap;
   background-color: #F6BC65;
-  justify-content: space-around;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
 }
 
 .pizza-container > div {
@@ -337,21 +412,24 @@
 
 .quote-text {
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
-  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px #ff5757;
+  font-weight: bold;
   padding: 20px;
   width: 70%;
-  margin: auto;
-  display: flex;
-  
+  margin: 0 auto 20px;
+  display: block;
+  line-height: 1.2;
 }
 
 
 @media(min-width: 768px) {
   /* For Desktop */
-  .quote-text{
-    width: 300px;
+  .quote-text {
+    width: 800px;
+    font-size: 35px;
   }
 }
 
@@ -1214,4 +1292,61 @@ background-color: #F6BC65;
 .dough-calculator .MuiTypography-h6 {
   color: #555;
   margin-top: 32px;
+}
+
+@media(min-width: 768px) {
+  .git-link:hover {
+    transform: scale(1.1);
+  }
+}
+
+.expanded-image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.expanded-image-container {
+  max-width: 70%;
+  max-height: 70vh;
+  animation: scaleIn 0.3s ease-out;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.expanded-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  max-height: 60vh;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
 }

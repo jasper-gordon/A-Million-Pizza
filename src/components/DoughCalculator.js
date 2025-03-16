@@ -159,12 +159,12 @@ const GraySwitch = styled(Switch)(({ theme }) => ({
  */
 const DoughCalculator = () => {
   // State for user inputs
-  const [ballWeight, setBallWeight] = useState(250);
+  const [ballWeight, setBallWeight] = useState(350);
   const [useGrams, setUseGrams] = useState(true);
   const [numBalls, setNumBalls] = useState(4);
   const [hydration, setHydration] = useState(65);
   const [salt, setSalt] = useState(2.5);
-  const [yeast, setYeast] = useState(0.2);
+  const [yeast, setYeast] = useState(0.5);
   const [useSourdough, setUseSourdough] = useState(false);
   const [sourdoughAmount, setSourdoughAmount] = useState(20); // Default 20% starter
 

@@ -21,24 +21,32 @@ import CustomizedAccordion from './CustomizedAccordion';
 const DOUGH_FAQ = [
   {
     label: "Why is my pizza dough so stiff and hard to shape?",
-    content: "Most likely it's about time or temperature. Dough is made up of a complex gluten network of proteins which can be thought of like the muscles in your body. If you're too cold or you just finished exercising, your muscles will be stiff and inflexible. For best shaping, we recommend letting your dough rest in warm spot (at least 70˚F) for at least an hour or two after shaping or coming out of the fridge.",
+    content: "Most likely it's about time or temperature. Dough is made up of a complex gluten network of proteins which can be thought of like the muscles in your body. If you're too cold or you just finished exercising, your muscles will be stiff and not good for pizza either. For best shaping, we recommend letting your dough rest in warm spot (at least 70˚F) for at least an hour or two after shaping or coming out of the fridge.",
     expandedId: "dough-panel-1",
     controls: "dough-panel-1-content",
     header: "dough-panel-1-header"
   },
+
   {
-    label: "What flour do you use?",
-    content: "Generally speaking we like to use unbleached all-purpose or bread flour for pizza. To form a dough strong enough to handle being tossed, shaped, and topped we want a strong gluten network. That said, there are many varieties of flour on the market from both local and national millers and we love to experiment!",
+    label: "Do you ever use store-bought pizza dough? Is there a way to make it better?",
+    content: "Yes! Store-bought is a great option, especially if you're short on time or just don't want to think about the dough. Our advice is to remove it from it's packaging, place it in a covered bowl, and let it sit some place warm for minimum an hour, ideally 2-3 before using. This will allow the dough to relax and rise, and you'll find it's much easier to shape after.",
     expandedId: "dough-panel-2",
     controls: "dough-panel-2-content",
     header: "dough-panel-2-header"
   },
   {
-    label: "Why do some recipes use sugar or oil and others don't?",
-    content: "Color and texture! Sugars and fats both lend to better browning when baking. Sugar also helps activate yeast, providing food for the bacteria. Fats help improve texture, keeping the crust from drying out too much in the oven, however it also can inhibit gluten development so it is important to beware of the amount you're adding.",
+    label: "What flour do you use?",
+    content: "Generally speaking we like to use unbleached all-purpose or bread flour for pizza. To form a dough strong enough to handle being tossed, shaped, and topped we want a strong gluten network. That said, there are many varieties of flour on the market from both local and national millers and we love to experiment!",
     expandedId: "dough-panel-3",
     controls: "dough-panel-3-content",
     header: "dough-panel-3-header"
+  },
+  {
+    label: "Why do some recipes use sugar or oil and others don't?",
+    content: "Color and texture! Sugars and fats both lend to better browning when baking. Sugar also helps activate yeast, providing food for the bacteria. Fats help improve texture, keeping the crust from drying out too much in the oven, however it also can inhibit gluten development so it is important to beware of the amount you're adding.",
+    expandedId: "dough-panel-4",
+    controls: "dough-panel-4-content",
+    header: "dough-panel-4-header"
   }
 ];
 
@@ -55,7 +63,7 @@ const DOUGH_FAQ = [
 const TOPPINGS_FAQ = [
   {
     label: "What tomatoes do you use?",
-    content: "The best tomatoes depend on whatever you prefer. There are many great local and national brands. Our favorites are Bianco DiNapoli and Alta Cucina!",
+    content: "The best tomatoes are where you are! We recommend trying what's local to you, although there are many great national brands. Our favorites are Bianco DiNapoli and Alta Cucina!",
     expandedId: "toppings-panel-1",
     controls: "toppings-panel-1-content",
     header: "toppings-panel-1-header"
@@ -82,14 +90,14 @@ const TOPPINGS_FAQ = [
 const COOKING_FAQ = [
   {
     label: "What temperature is best for cooking pizza?",
-    content: "As hot as you can go! Higher temperatures provide better heat transfer and faster cooking for the pizza, leading to better texture, coloration, and a risen crust. Neapolitan pizza generally runs the hottest, maxing out around 950˚F. Anything hotter and you risk your pizza tasting like fire and not much else. At home, simply preheat your oven to its max heat.",
+    content: "As hot as you can go! Higher temperatures provide better heat transfer and faster cooking for the pizza, leading to better texture, color, and a rise in the crust. Neapolitan pizza ovens generally run the hottest, maxing out around 900-1000˚F. Anything hotter and you risk your pizza tasting like fire and not much else. At home, simply preheat your oven to its max heat.",
     expandedId: "cooking-panel-1",
     controls: "cooking-panel-1-content",
     header: "cooking-panel-1-header"
   },
   {
     label: "Why do my onions keep burning?",
-    content: "Toppings, especially when small in size, can burn before a pizza is done. Our advice, either wait to add toppings until the pizza is almost done, or coat them with a little oil to protect them from the direct heat.",
+    content: "Toppings, especially when small in size, can burn before a pizza is done. Our advice: Either wait to add toppings until the pizza is almost done, or coat them with a little oil to protect them from the direct heat.",
     expandedId: "cooking-panel-2",
     controls: "cooking-panel-2-content",
     header: "cooking-panel-2-header"
@@ -103,7 +111,7 @@ const COOKING_FAQ = [
   },
   {
     label: "Do I need a pizza peel (the wood thingy)?",
-    content: "Certainly not, it just makes things easier and looks cool 😎. A well-floured cutting board or really any flat, non-stick surface will do just fine. We've been known to use cardboard in a pinch! The important thing is to test before putting the pizza in the oven that it slides easily.",
+    content: "Certainly not, it just makes things easier and looks cool 😎. A well-floured cutting board or really any flat, non-stick surface will do just fine. We've been known to use cardboard in a pinch! The important thing is to test that the pizza slides well before putting the pizza in the oven.",
     expandedId: "cooking-panel-4",
     controls: "cooking-panel-4-content",
     header: "cooking-panel-4-header"
