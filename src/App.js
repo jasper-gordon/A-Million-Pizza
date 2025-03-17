@@ -17,6 +17,7 @@ import Navbar from './components/Navbar'
 import PizzaMap from './components/PizzaMap'
 import AboutUs from './components/AboutUs'
 import DoughCalculator from './components/DoughCalculator'
+import PizzaFlocking from './components/PizzaFlocking'
 import './App.css';
 import { entries } from 'lodash';
 import {lazy, Suspense} from 'react';
@@ -47,6 +48,7 @@ function App() {
         <Route path='/calculator' element={<Calculator />} />
         <Route path='/dough-calculator' element={<DoughCalculator />} />
         <Route path='/map' element={<PizzaMap />} />
+        <Route path='/farm' element={<PizzaFlocking />} />
         
         {/* Information Pages */}
         <Route path='/aboutus' element={<AboutUs />}/>
